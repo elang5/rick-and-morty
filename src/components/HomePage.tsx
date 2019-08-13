@@ -43,10 +43,10 @@ export default function HomePage() {
                 type="text"
                 ref={inputRef}
                 onChange={() =>
-                  updateSearchTerm(state, dispatch, inputRef.current.value)
+                  updateSearchTerm(dispatch, inputRef.current.value)
                 }
               />{" "}
-              ???
+              ?
             </p>
           </form>
         </section>

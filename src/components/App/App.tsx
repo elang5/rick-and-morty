@@ -4,7 +4,7 @@ import { Link } from "@reach/router";
 import "./App.css";
 
 function App(props: any): JSX.Element {
-  const { state, dispatch } = React.useContext(Store);
+  const { state } = React.useContext(Store);
 
   return (
     <React.Fragment>

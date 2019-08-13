@@ -5,7 +5,6 @@ export const fetchDataAction = async (dispatch: any, searchTerm: string) => {
     const URL = `https://api.tvmaze.com/singlesearch/shows?q=${searchTerm}&embed=episodes`;
     const data = await fetch(URL);
     const dataJSON = await data.json();
-    console.log(dataJSON);
     return dispatch({
       type: "FETCH_DATA",
       payload: dataJSON._embedded.episodes
@@ -41,7 +40,6 @@ export const toggleFavAction = (
 };
 
 export const updateSearchTerm = (
-  state: IState,
   dispatch: any,
   searchTerm: string
 ): IAction => {
