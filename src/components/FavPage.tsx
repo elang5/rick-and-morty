@@ -1,7 +1,7 @@
 import React from 'react'
-import { Store } from './Store'
-import { IEpisodeProps } from './interfaces'
-import { toggleFavAction } from './Actions'
+import { Store } from '../Store'
+import { IEpisodeProps } from '../interfaces/interfaces'
+import { toggleFavAction } from '../actions/Actions'
 
 const EpisodeList = React.lazy<any>(() => import('./EpisodeList'))
 
