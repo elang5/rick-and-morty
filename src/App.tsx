@@ -10,13 +10,13 @@ function App(props: any): JSX.Element {
     <React.Fragment>
       <header className="header">
         <h1>Rick and Morty</h1>
-        <p>Pick your favorite episode!!!</p>
-        <div>
+        <p>What are your favorite episodes???</p>
+        <nav className="nav" role="navigation">
           <Link to='/'>Home</Link>
           <Link to='/faves'>
             Favorite(s): {state.favorites.length}
           </Link>
-        </div>
+        </nav>
       </header>
       {props.children}
     </React.Fragment>

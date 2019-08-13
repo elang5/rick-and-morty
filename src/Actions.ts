@@ -16,8 +16,8 @@ export const toggleFavAction = (state: IState, dispatch: any, episode: IEpisode 
     type: 'ADD_FAV',
     payload: episode
   }
-  if(episodeInFav) {
-    const favWithoutEpisode = state.favorites.filter((fav: IEpisode)=> fav.id !== episode.id)
+  if (episodeInFav) {
+    const favWithoutEpisode = state.favorites.filter((fav: IEpisode) => fav.id !== episode.id)
     dispatchObj = {
       type: 'REMOVE_FAV',
       payload: favWithoutEpisode
