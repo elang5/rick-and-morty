@@ -15,7 +15,7 @@ button {
 }
 
 .episode-box > div {
-  padding-top: 0.5em;
+  padding: 0.5em 0;
 }
 
 .MuiButtonBase-root.fav-button {
