@@ -1,12 +1,14 @@
 import React from "react";
 import { IEpisode } from "../interfaces/interfaces";
+import Button from "@material-ui/core/Button";
+import Card from "@material-ui/core/Card";
 
 export default function EpisodeList(props: any): JSX.Element[] {
   const { episodes, toggleFavAction, favorites, store } = props;
   const { state, dispatch } = store;
   return episodes.map((episode: IEpisode) => {
     return (
-      <section key={episode.id} className="episode-box">
+      <Card key={episode.id} className="episode-box">
         <a href={episode.url} target="_blank" rel="noopener noreferrer">
           <img
             src={episode.image === null ? "" : episode.image.medium}
@@ -15,17 +17,19 @@ export default function EpisodeList(props: any): JSX.Element[] {
         </a>
         <div>{episode.name}</div>
         <section style={{ display: "flex", justifyContent: "space-between" }}>
-          <div>
+          <div style={{ display: "flex", alignItems: "center" }}>
             Season: {episode.season} Number: {episode.number}
           </div>
-          <button
-            type="button"
+          <Button
+            variant="contained"
+            size="small"
+            className="fav-button"
             onClick={() => toggleFavAction(state, dispatch, episode)}
           >
             {favorites.includes(episode) ? "Unfav" : "Fav"}
-          </button>
+          </Button>
         </section>
-      </section>
+      </Card>
     );
   });
 }
