@@ -6,6 +6,7 @@ import {
   toggleFavAction,
   updateSearchTerm
 } from "../actions/Actions";
+import TextField from "@material-ui/core/TextField";
 
 type FormElem = React.FormEvent<HTMLFormElement>;
 
@@ -37,17 +38,20 @@ export default function HomePage() {
       <React.Suspense fallback={<div>Loading...</div>}>
         <section className="search">
           <form onSubmit={e => handleSubmit(e)}>
-            <p>
-              What are your favorite episodes in{" "}
-              <input
+            <div className="search-container">
+              <h2>
+                Enter your favorite TV show to add your favorite episodes:
+              </h2>
+              <TextField
+                label="Search"
+                className="search-input"
                 type="text"
-                ref={inputRef}
+                inputRef={inputRef}
                 onChange={() =>
                   updateSearchTerm(dispatch, inputRef.current.value)
                 }
               />{" "}
-              ?
-            </p>
+            </div>
           </form>
         </section>
         <section className="episode-layout">

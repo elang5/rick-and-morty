@@ -11,30 +11,58 @@ button {
 
 .episode-box {
   padding: 0.5rem;
+  margin: 0.75rem;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  background: white;
-  border-bottom: 1px solid black;
-  padding: 0.5rem;
-  position: sticky;
-  top: 0;
-  align-items: center;
+.episode-box > div {
+  padding: 0.5em 0;
 }
 
-.header > p {
-  font-size: 1.1rem;
+.MuiButtonBase-root.fav-button {
+  color: white;
+  background-color: rgb(128, 0, 0);
+}
+
+.MuiButtonBase-root.fav-button:hover {
+  background-color: rgba(128, 0, 0, 0.75);
 }
 
 nav > a {
   margin: 0 0.5rem;
   font-size: 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+nav > a:hover {
+  text-decoration: underline;
+  transition: 0.3s;
 }
 
 .search > form {
   display: flex;
   justify-content: center;
   font-size: 14px;
+}
+
+.search-container {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.search-input {
+  width: 50%;
+}
+
+.MuiAppBar-root.app-bar {
+  background-color: maroon;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-bar > h1 {
+  margin-left: 0.5rem;
 }
