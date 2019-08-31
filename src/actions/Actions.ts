@@ -12,7 +12,7 @@ export const fetchDataAction = async (dispatch: any, searchTerm: string) => {
   } catch (err) {
     return dispatch({
       type: "HANDLE_ERROR",
-      payload: err.message
+      payload: "No TV shows matched your search. Please try another search."
     });
   }
 };
@@ -46,5 +46,18 @@ export const updateSearchTerm = (
   return dispatch({
     type: "UPDATE_SEARCH",
     payload: searchTerm
+  });
+};
+
+export const clearError = (dispatch: any): IAction => {
+  return dispatch({
+    type: "CLEAR_ERROR"
+  });
+};
+
+export const setLoading = (dispatch: any, loading: boolean): IAction => {
+  return dispatch({
+    type: "SET_LOADING",
+    payload: loading
   });
 };

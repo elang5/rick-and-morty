@@ -22,6 +22,8 @@ const reducer = (state: IState, action: IAction): IState => {
       return { ...state, searchTerm: action.payload };
     case "HANDLE_ERROR":
       return { ...state, error: action.payload };
+    case "CLEAR_ERROR":
+      return { ...state, error: null };
     default:
       return state;
   }

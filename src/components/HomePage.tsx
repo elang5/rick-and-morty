@@ -4,7 +4,8 @@ import { IEpisodeProps } from "../interfaces/interfaces";
 import {
   fetchDataAction,
   toggleFavAction,
-  updateSearchTerm
+  updateSearchTerm,
+  clearError
 } from "../actions/Actions";
 import TextField from "@material-ui/core/TextField";
 
@@ -22,8 +23,9 @@ export default function HomePage() {
 
   const handleSubmit = (e: FormElem) => {
     e.preventDefault();
+    clearError(dispatch);
     fetchDataAction(dispatch, state.searchTerm);
-    inputRef.current = "";
+    inputRef.current.value = "";
   };
 
   const props: IEpisodeProps = {
@@ -35,7 +37,7 @@ export default function HomePage() {
 
   return (
     <React.Fragment>
-      <React.Suspense fallback={<div>Loading...</div>}>
+      <React.Suspense fallback={<div className="loading">Loading...</div>}>
         <section className="search">
           <form onSubmit={e => handleSubmit(e)}>
             <div className="search-container">
